@@ -11,12 +11,9 @@ const Event = db.define('event', {
             notEmpty: true
         }
     },
-    content: {
+    note: {
         type: Sequelize.TEXT,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
+        allowNull: true,
     },
     purpose: {
         type: Sequelize.ENUM('holiday', 'special', 'pirate', 'play'),
