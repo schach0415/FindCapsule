@@ -1,7 +1,7 @@
 'use strict ';
 
 const router = require('express').Router()
-const { event } = require('../db/models')
+const { Event } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {

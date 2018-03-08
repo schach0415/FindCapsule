@@ -1,7 +1,7 @@
 'use strict ';
 
 const router = require('express').Router()
-const { radors } = require('../db/models')
+const { Radors } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
