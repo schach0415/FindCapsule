@@ -46,7 +46,7 @@ export const removeEvent = id => dispatch =>
 
  /**
  * Reducer
- */       
+ */
 export default function reducer(events = [], action) {
   switch (action.type) {
     case GET_EVENTS:
