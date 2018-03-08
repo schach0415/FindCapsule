@@ -43,7 +43,9 @@ export const removeCapsule = id => dispatch =>
     axios.delete(`/api/capsules/${id}`)
         .then(() => dispatch(deleteCapsule(id)))
         .catch(err => console.error(`Deleting Capsule (id: ${id}) unsuccesful.`, err))
-
+/**
+ * Reducer
+ */
 export default function reducer(capsules = [], action) {
   switch (action.type) {
     case GET_CAPSULES:

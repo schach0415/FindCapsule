@@ -44,6 +44,9 @@ export const removeContent = id => dispatch =>
         .then(() => dispatch(deleteContent(id)))
         .catch(err => console.error(`Deleting Content (id: ${id}) unsuccesful.`, err))
 
+/**
+ * Reducer
+ */
 export default function reducer(contents = [], action) {
   switch (action.type) {
     case GET_CONTENTS:

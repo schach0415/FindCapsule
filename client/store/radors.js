@@ -44,6 +44,9 @@ export const removeRador = id => dispatch =>
         .then(() => dispatch(deleteRador(id)))
         .catch(err => console.error(`Deleting Rador (id: ${id}) unsuccesful.`, err))
 
+/**
+ * Reducer
+ */
 export default function reducer(radors = [], action) {
   switch (action.type) {
     case GET_RADORS:

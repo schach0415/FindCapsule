@@ -44,6 +44,9 @@ export const removeEvent = id => dispatch =>
         .then(() => dispatch(deleteEvent(id)))
         .catch(err => console.error(`Deleting Event (id: ${id}) unsuccesful.`, err))
 
+ /**
+ * Reducer
+ */       
 export default function reducer(events = [], action) {
   switch (action.type) {
     case GET_EVENTS:
