@@ -25,4 +25,4 @@ before_script:
 #   provider: heroku
 #   app: YOUR-HEROKU-APP-NAME-HERE # see README
 #   api_key:
-#     secure: YOUR-***ENCRYPTED***-API-KEY-HERE # see README
+#     secure: 9suM0HMWbl-CXq8q-n5t-g # see README
