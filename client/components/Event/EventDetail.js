@@ -18,8 +18,26 @@ class EventDetail extends React.Component {
     }
 
     render(){
+        const event = this.props.event
         return (
-
+            <div>
+                {
+                    !event.title ?
+                    null : (
+                    <div>
+                        <div>
+                            <h1>{event.title}</h1>
+                        </div>
+                        <img src={event.imageUrl}/>
+                        <p>
+                            Start : {event.startDate} ~ End : {event.endDate}
+                        </p>
+                        <h4>{event.purpose}</h4>
+                        <p>{event.note}</p>
+                    </div>
+                    )
+                }
+            </div>
         )
     }
 }
