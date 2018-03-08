@@ -5,10 +5,11 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import contents from './contents'
 import capsules from './capsules'
+import event from './event'
 import events from './events'
 import radors from './radors'
 
-const reducer = combineReducers({user, contents, capsules, events, radors})
+const reducer = combineReducers({user, contents, capsules, event, events, radors})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -19,5 +20,6 @@ export default store
 export * from './user'
 export * from './contents'
 export * from './capsules'
+export * from './event'
 export * from './events'
 export * from './radors'
