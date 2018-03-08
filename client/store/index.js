@@ -6,8 +6,9 @@ import user from './user'
 import contents from './contents'
 import capsules from './capsules'
 import events from './events'
+import radors from './radors'
 
-const reducer = combineReducers({user, contents, capsules, events})
+const reducer = combineReducers({user, contents, capsules, events, radors})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -19,3 +20,4 @@ export * from './user'
 export * from './contents'
 export * from './capsules'
 export * from './events'
+export * from './radors'
