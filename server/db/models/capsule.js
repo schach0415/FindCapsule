@@ -22,7 +22,7 @@ const Capsule = db.define('capsule', {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            notEmpty: true
+          isUrl: {msg: 'Invalid URL, try again'}
         }
     },
     availability: {
