@@ -2,6 +2,7 @@ const User = require('./user')
 const Capsule = require('./capsule')
 const Rador = require('./rador')
 const Event = require('./event')
+const Content = require('./content')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -12,6 +13,7 @@ const Event = require('./event')
 Event.hasMany(Rador)
 Event.hasMany(Capsule)
 User.hasMany(Event)
+Capsule.hasMany(Content)
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'
@@ -23,4 +25,5 @@ module.exports = {
   Capsule,
   Rador,
   Event,
+  Content,
 }

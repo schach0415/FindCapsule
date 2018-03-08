@@ -61,6 +61,10 @@ const Capsule = db.define('capsule', {
             notEmpty: true,
             min: 0
         }
+    },
+    location: {
+        type: Sequelize.STRING,
+        allowNull: false,
     }
 })
 
