@@ -4,6 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchEvent } from '../../store'
+import { CapsuleList } from '../'
 
 /**
  * COMPONENT
@@ -26,20 +27,28 @@ class EventDetail extends React.Component {
                     null : (
                     <div>
                         <div>
-                            <h1>{event.title}</h1>
+                            <div>
+                                <h1>{event.title}</h1>
+                                <Link to={`/events/${event.id}/edit`}>
+                                    <button>Edit</button>
+                                </Link>
+                            </div>
+                            <img src={event.imageUrl}/>
+                            <p>
+                                Start : {event.startDate} ~ End : {event.endDate}
+                            </p>
+                            <h4>{event.purpose}</h4>
+                            <p>{event.note}</p>
                         </div>
-                        <img src={event.imageUrl}/>
-                        <p>
-                            Start : {event.startDate} ~ End : {event.endDate}
-                        </p>
-                        <h4>{event.purpose}</h4>
-                        <p>{event.note}</p>
+                        <CapsuleList capsules={event.capsules} />
                     </div>
                     )
                 }
             </div>
         )
     }
+
+    
 }
 
 /**
