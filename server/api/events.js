@@ -1,11 +1,19 @@
 'use strict ';
 
 const router = require('express').Router()
-const { Event } = require('../db/models')
+const { Event, Capsule } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
-    Event.findAll()
+    Event.findAll({
+        include: [{
+            // attributes: ['id'],
+            model: Capsule
+            // through: {
+            //     attributes: []
+            // }
+        }]
+    })
         .then(events => res.json(events))
         .catch(next)
 })
@@ -20,6 +28,7 @@ router.get('/:eventId', (req, res, next) => {
 router.post('/', (req, res, next) => {
     Event.create(req.body)
         .then(event =>
+
             res.status(201).json(event)
         )
         .catch(next)

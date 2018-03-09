@@ -17,6 +17,7 @@ class EventCreate extends React.Component {
             purpose: 'play',
             startDate: '',
             endDate: '',
+            userId: props.userId,
             imageUrl: 'http://secretgardenplaycafe.co.uk/wp-content/uploads/2015/12/messyhands.jpg'
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -54,7 +55,7 @@ class EventCreate extends React.Component {
                             }
                             name="startDate"
                             required
-                            placeholder="Starting Date"
+                            placeholder="M-D-YYYY-H"
                         />
                     </h3>
                     <h3>
@@ -65,7 +66,7 @@ class EventCreate extends React.Component {
                             }
                             name="endDate"
                             required
-                            placeholder="End Date"
+                            placeholder="M-D-YYYY-H"
                         />
                     </h3>
                     <h3>
@@ -110,7 +111,10 @@ class EventCreate extends React.Component {
 /**
  * CONTAINER
  */
-const mapState = null
+const mapState = ({ user }) => {
+    const userId = user.userId
+    return { userId }
+}
 
 const mapDispatch = (dispatch) => ({
     addEvent: (Event) =>

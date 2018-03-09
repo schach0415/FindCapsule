@@ -31,6 +31,7 @@ class CapsuleList extends React.Component {
                 <Link to="/capsule-create">
                     <button>Add Capsule</button>
                 </Link>
+                <p>There is no Capsule.</p>
             </div>
         )
     }

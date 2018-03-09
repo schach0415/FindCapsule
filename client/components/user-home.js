@@ -1,30 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {EventList} from './'
+import {fetchEvents} from '../store'
 
 /**
  * COMPONENT
  */
-export const UserHome = (props) => {
-  const {email} = props
+export class UserHome extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  
+  componentDidMount(){
+    this.props.fetchEvents()
+  }
 
-  return (
-    <div>
-      <h3>Welcome, {email}</h3>
-    </div>
-  )
+  render(){
+    const {email, events} = this.props
+    console.log(events)
+    return (
+      <div>
+        <h3>Welcome, {email}</h3>
+        <EventList events={events} />
+      </div>
+    )
+  }
 }
 
 /**
  * CONTAINER
  */
-const mapState = (state) => {
+const mapState = ({ user, events }) => {
+  const eventsForOne = !events ? null : events.filter(event => event.userId === user.id) 
   return {
-    email: state.user.email
+    email: user.email,
+    events: eventsForOne
   }
 }
 
-export default connect(mapState)(UserHome)
+const mapDispatch = dispatch => ({
+  fetchEvents: () => dispatch(fetchEvents())
+})
+
+export default connect(mapState, mapDispatch)(UserHome)
 
 /**
  * PROP TYPES
