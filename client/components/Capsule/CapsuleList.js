@@ -49,8 +49,11 @@ class CapsuleList extends React.Component {
                     {
                         capsules.map(capsule => (
                             <div key={capsule.id}>
-                                <img src={capsule.imageUrl}/>
-                                <h4>{capsule.name}</h4>
+                                <div>
+                                    <img src={capsule.imageUrl}/>
+                                    <h4>{capsule.name}</h4>
+                                </div>
+
                             </div>
                         ))
                     }
@@ -65,6 +68,4 @@ class CapsuleList extends React.Component {
  */
 const mapState = null
 
-const mapDispatch = null
-
-export default connect(mapState, mapDispatch)(CapsuleList)
+export default connect(mapState)(CapsuleList)

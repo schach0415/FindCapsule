@@ -30,19 +30,21 @@ const Capsule = db.define('capsule', {
         defaultValue: 'pending',
         allowNull: false
     },
-    pattern: {
-        type: Sequelize.ENUM('quentity', 'duration'),
-        defaultValue: 'quentity',
-        allowNull: false
-    },
-    usage: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            min: 0
-        },
-    },
+    // quentity: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     validate: {
+    //         min: 1
+    //     }
+    // },
+    // usage: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     validate: {
+    //         notEmpty: true,
+    //         min: 0
+    //     },
+    // },
     startingPoint: {
         type: Sequelize.DATE,
         defaultValue: Date.now(),
