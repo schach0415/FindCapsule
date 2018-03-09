@@ -30,13 +30,13 @@ const Capsule = db.define('capsule', {
         defaultValue: 'pending',
         allowNull: false
     },
-    // quentity: {
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false,
-    //     validate: {
-    //         min: 1
-    //     }
-    // },
+    quentity: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 1
+        }
+    },
     // usage: {
     //     type: Sequelize.INTEGER,
     //     allowNull: false,

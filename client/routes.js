@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, Main} from './components'
+import {Login, Signup, UserHome, Main, EventDetail, EventCreate} from './components'
 import {me} from './store'
 
 /**
@@ -22,6 +22,12 @@ class Routes extends Component {
         <Route exact path="/" component={Main} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
+        {/* <Route exact path="/capsule-create" component={CapsuleCreate} /> */}
+        <Route exact path="/events/:eventId" component={EventDetail} />
+        <Route exact path="/event-create" component={EventCreate} />
+        {/* <Route exact path="/events/:eventId/event-edit" component={EventEdit} /> */}
+        {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
         {
           isLoggedIn &&
             <Switch>

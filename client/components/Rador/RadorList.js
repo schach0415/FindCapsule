@@ -7,60 +7,58 @@ import { Link } from 'react-router-dom'
 /**
  * COMPONENT
  */
-class CapsuleList extends React.Component {
+class RadorList extends React.Component {
     constructor(props){
         super(props)
     }
 
     render(){
-        const capsules = this.props.capsules
+        const radors = this.props.radors
         return (
             <div>
                 {
-                    !capsules ?
-                    this.renderWithoutCapsule() : this.renderWithoutCapsule()
+                    !radors ?
+                    this.renderWithoutRador() : this.renderWithoutRador()
                 }
             </div>
         )
     }
 
-    renderWithoutCapsule(){
+    renderWithoutRador(){
         return (
             <div>
-                <h2>Capsules</h2>
-                <Link to="/capsule-create">
-                    <button>Add Capsule</button>
+                <h2>Radors</h2>
+                <Link to="/rador-create">
+                    <button>Add Rador</button>
                 </Link>
             </div>
         )
     }
 
-    renderWithCapsule(){
+    renderWithRador(){
         return (
             <div>
                 <div>
-                    <h2>Capsules</h2>
-                    <Link to="/capsule-create">
-                        <button>Add Capsule</button>
+                    <h2>Radors</h2>
+                    <Link to="/rador-create">
+                        <button>Add Rador</button>
                     </Link>
                 </div>
                 <div>
                     {
-                        capsules
+                        Radors
                             .reduce((accu, curr) =>
                                 accu.slice(-1)[0].name !== curr.name,
                                 []
                             )
-                            .map(capsule => (
-                                <div key={capsule.id}>
+                            .map(rador => (
+                                <div key={rador.id}>
                                     <div>
-                                        <img src={capsule.imageUrl}/>
-                                        <h4>{capsule.name}</h4>
-                                        <p>{capsule.quentity}</p>
+                                        <img src={rador.imageUrl}/>
+                                        <h4>{rador.name}</h4>
                                     </div>
-
                                 </div>
-                        ))
+                            ))
                     }
                 </div>
             </div>
@@ -73,4 +71,4 @@ class CapsuleList extends React.Component {
  */
 const mapState = null
 
-export default connect(mapState)(CapsuleList)
+export default connect(mapState)(RadorList)

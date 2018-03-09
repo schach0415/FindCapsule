@@ -1,14 +1,15 @@
 'use strict'
 
-import axios from 'axios';
+import axios from 'axios'
+import history from '../history'
 
 /**
  * ACTION TYPES
  */
-const GET_EVENTS = 'GET_EVENTS';
-const CREATE_EVENT = 'CREATE_EVENT';
-const UPDATE_EVENT = 'UPDATE_EVENT';
-const DELETE_EVENT = 'DELETE_EVENT';
+const GET_EVENTS = 'GET_EVENTS'
+const CREATE_EVENT = 'CREATE_EVENT'
+const UPDATE_EVENT = 'UPDATE_EVENT'
+const DELETE_EVENT = 'DELETE_EVENT'
 
 /**
  * ACTION CREATORS
@@ -30,7 +31,10 @@ export const fetchEvents = () => dispatch =>
 export const addEvent = event => dispatch =>
     axios.post('/api/events', event)
         .then(res => res.data)
-        .then(newEvent => dispatch(createEvent(newEvent)))
+        .then(newEvent => {
+          dispatch(createEvent(newEvent))
+          history.push(`/events/${newEvent.id}`)
+        })
         .catch(err => console.error(`Creating Event ${event} unsuccesful.`, err))
 
 export const editEvent = (event, id) => dispatch =>
