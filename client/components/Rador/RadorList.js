@@ -31,6 +31,7 @@ class RadorList extends React.Component {
                 <Link to="/rador-create">
                     <button>Add Rador</button>
                 </Link>
+                <p>There is no Rador.</p>
             </div>
         )
     }

@@ -22,17 +22,18 @@ class Routes extends Component {
         <Route exact path="/" component={Main} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
-        {/* <Route exact path="/capsule-create" component={CapsuleCreate} /> */}
-        <Route exact path="/events/:eventId" component={EventDetail} />
-        <Route exact path="/event-create" component={EventCreate} />
-        {/* <Route exact path="/events/:eventId/event-edit" component={EventEdit} /> */}
-        {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
         {
           isLoggedIn &&
             <Switch>
               {/* Routes placed here are only available after logging in */}
               <Route path="/home" component={UserHome} />
+              {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
+              {/* <Route exact path="/capsule-create" component={CapsuleCreate} /> */}
+              <Route exact path="/events/:eventId" component={EventDetail} />
+              <Route exact path="/event-create" component={EventCreate} />
+              {/* <Route exact path="/events/:eventId/event-edit" component={EventEdit} /> */}
+              {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
+
             </Switch>
         }
         {/* Displays our Login component as a fallback */}
