@@ -1,18 +1,12 @@
 'use strict ';
 
 const router = require('express').Router()
-const { Event, Capsule } = require('../db/models')
+const { Event, Capsule, Participant } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
     Event.findAll({
-        include: [{
-            // attributes: ['id'],
-            model: Capsule
-            // through: {
-            //     attributes: []
-            // }
-        }]
+        include: [{ model: Capsule }]
     })
         .then(events => res.json(events))
         .catch(next)
@@ -21,7 +15,10 @@ router.get('/', (req, res, next) => {
 router.get('/:eventId', (req, res, next) => {
     const id = req.params.eventId
     Event.findById(id, {
-        include: [{ model: Capsule }]
+        include: [
+            { model: Capsule },
+            { model: Participant }
+        ]
     })
         .then(event => res.json(event))
         .catch(next)
@@ -31,9 +28,10 @@ router.post('/', (req, res, next) => {
     Event.create(req.body)
         .then(event => {
             return Event.findById(event.id, {
-                include: [{
-                    model: Capsule
-                }]
+                include: [
+                    { model: Capsule },
+                    { model: Participant }
+                ]
             })
         })
         .then(event =>
@@ -48,9 +46,15 @@ router.put('/:eventId', (req, res, next) => {
         where: { id },
         returning: true,
     })
-        .then(([rowsUpdate, [event]]) =>
-            res.json(event)
-        )
+        .then(([rowsUpdate, [event]]) => {
+            return Event.findById(event.id, {
+                include: [
+                    { model: Capsule },
+                    { model: Participant }
+                ]
+            })
+        })
+        .then(event => res.json(event))
         .catch(next)
 })
 

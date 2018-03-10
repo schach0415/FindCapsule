@@ -3,13 +3,11 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Rador = db.define('rador', {
+const Radar = db.define('radar', {
     name: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM('diamond', 'gold', 'silver', 'bronze'),
+        defaultValue: 'silver',
         allowNull: false,
-        validate: {
-            notEmpty: true
-        }
     },
     description: {
         type: Sequelize.TEXT,
@@ -20,14 +18,14 @@ const Rador = db.define('rador', {
     },
     imageUrl: {
         type: Sequelize.STRING,
-        allowNull: false,
+        defaultValue: 'http://www.conquistanews.com.br/wp-content/uploads/2013/04/radar_gif-animado-3749582.gif',
         validate: {
           isUrl: {msg: 'Invalid URL, try again'}
         }
     },
-    sound: {
+    soundUrl: {
         type: Sequelize.STRING,
-        allowNull: false,
+        defaultValue: 'http://soundbible.com/mp3/Radar%20Detector%20Beeps-SoundBible.com-892148482.mp3',
         validate: {
           isUrl: {msg: 'Invalid URL, try again'}
         }
@@ -42,4 +40,4 @@ const Rador = db.define('rador', {
     }
 })
 
-module.exports = Rador
+module.exports = Radar

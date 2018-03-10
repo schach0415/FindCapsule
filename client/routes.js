@@ -27,13 +27,13 @@ class Routes extends Component {
             <Switch>
               {/* Routes placed here are only available after logging in */}
               <Route path="/home" component={UserHome} />
-              {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
+              {/* <Route exact path="/radar-create" component={RadarCreate} /> */}
               <Route exact path="/event-create" component={EventCreate} />
               <Route exact path="/events/:eventId" component={EventDetail} />
               <Route exact path="/events/:eventId/capsule-create" component={CapsuleCreate} />
               <Route exact path="/capsules/:capsuleId" component={CapsuleDetail} />
               {/* <Route exact path="/events/:eventId/event-edit" component={EventEdit} /> */}
-              {/* <Route exact path="/rador-create" component={RadorCreate} /> */}
+              {/* <Route exact path="/radar-create" component={RadarCreate} /> */}
 
             </Switch>
         }

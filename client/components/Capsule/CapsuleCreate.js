@@ -98,7 +98,8 @@ class CapsuleCreate extends React.Component {
  * CONTAINER
  */
 const mapState = (state, ownProps) => {
-    const eventId = Number(ownProps.match.params.eventId)
+    const eventId = !ownProps.match.params.eventId ? null : Number(ownProps.match.params.eventId)
+    console.log(eventId)
     return { eventId }
 }
 

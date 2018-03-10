@@ -12,10 +12,12 @@ class CapsuleList extends React.Component {
     constructor(props){
         super(props)
         this.renderWithCapsule = this.renderWithCapsule.bind(this)
+        this.renderWithoutCapsule = this.renderWithoutCapsule.bind(this)
     }
 
     render(){
         const capsules = this.props.capsules
+        console.log(capsules, !capsules)
         return (
             <div>
                 {
@@ -27,10 +29,11 @@ class CapsuleList extends React.Component {
     }
 
     renderWithoutCapsule(){
+        const eventId = this.props.eventId
         return (
             <div>
                 <h2>Capsules</h2>
-                <Link to="/events/:eventId/capsule-create">
+                <Link to={`/events/${eventId}/capsule-create`}>
                     <button>Add Capsule</button>
                 </Link>
                 <p>There is no Capsule.</p>
@@ -39,12 +42,12 @@ class CapsuleList extends React.Component {
     }
 
     renderWithCapsule(){
-        const capsules = this.props.capsules
+        const { capsules, eventId } = this.props
         return (
             <div>
                 <div>
                     <h2>Capsules</h2>
-                    <Link to="/events/:eventId/capsule-create">
+                    <Link to={`/events/${eventId}/capsule-create`}>
                         <button>Add Capsule</button>
                     </Link>
                 </div>

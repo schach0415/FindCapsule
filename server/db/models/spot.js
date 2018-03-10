@@ -4,6 +4,11 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Spot = db.define('spot', {
+    isCollected: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        allowNull: false
+    },
     latitude: {
         type: Sequelize.DECIMAL,
     },
