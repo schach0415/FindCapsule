@@ -9,7 +9,7 @@ import {fetchEvents} from '../store'
  */
 export class UserHome extends React.Component {
   componentDidMount(){
-    this.props.fetchEvents()
+    !this.props.fetchEvents ? null : this.props.fetchEvents()
   }
 
   render(){
