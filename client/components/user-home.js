@@ -9,7 +9,8 @@ import {fetchEvents} from '../store'
  */
 export class UserHome extends React.Component {
   componentDidMount(){
-    !this.props.fetchEvents ? null : this.props.fetchEvents()
+    if(!this.props.fetchEvents) return;
+    this.props.fetchEvents()
   }
 
   render(){
@@ -27,7 +28,7 @@ export class UserHome extends React.Component {
  * CONTAINER
  */
 const mapState = ({ user, events }) => {
-  const eventsForOne = !events ? null : events.filter(event => event.userId === user.id) 
+  const eventsForOne = !events ? null : events.filter(event => event.userId === user.id)
   return {
     email: user.email,
     events: eventsForOne
