@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { CapsuleItem } from '../'
 
 /**
  * COMPONENT
@@ -48,19 +49,15 @@ class CapsuleList extends React.Component {
                 <div>
                     {
                         capsules
-                            .reduce((accu, curr) =>
-                                accu.slice(-1)[0].name !== curr.name,
-                                []
-                            )
+                            // .reduce((accu, curr) =>
+                            //     accu.slice(-1)[0].name !== curr.name,
+                            //     []
+                            // )
                             .map(capsule => (
-                                <div key={capsule.id}>
-                                    <div>
-                                        <img src={capsule.imageUrl}/>
-                                        <h4>{capsule.name}</h4>
-                                        <p>{capsule.quentity}</p>
-                                    </div>
-
-                                </div>
+                                <CapsuleItem
+                                    key={capsule.id}
+                                    capsule={capsule}
+                                />
                         ))
                     }
                 </div>

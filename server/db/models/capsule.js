@@ -37,14 +37,6 @@ const Capsule = db.define('capsule', {
             min: 1
         }
     },
-    // usage: {
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false,
-    //     validate: {
-    //         notEmpty: true,
-    //         min: 0
-    //     },
-    // },
     startingPoint: {
         type: Sequelize.DATE,
         defaultValue: Date.now(),
