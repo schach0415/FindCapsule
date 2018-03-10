@@ -11,6 +11,7 @@ import { CapsuleItem } from '../'
 class CapsuleList extends React.Component {
     constructor(props){
         super(props)
+        this.renderWithCapsule = this.renderWithCapsule.bind(this)
     }
 
     render(){
