@@ -29,7 +29,7 @@ class CapsuleList extends React.Component {
         return (
             <div>
                 <h2>Capsules</h2>
-                <Link to="/capsule-create">
+                <Link to="/events/:eventId/capsule-create">
                     <button>Add Capsule</button>
                 </Link>
                 <p>There is no Capsule.</p>
@@ -42,7 +42,7 @@ class CapsuleList extends React.Component {
             <div>
                 <div>
                     <h2>Capsules</h2>
-                    <Link to="/capsule-create">
+                    <Link to="/events/:eventId/capsule-create">
                         <button>Add Capsule</button>
                     </Link>
                 </div>

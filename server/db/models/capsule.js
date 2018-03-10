@@ -25,41 +25,19 @@ const Capsule = db.define('capsule', {
           isUrl: {msg: 'Invalid URL, try again'}
         }
     },
-    availability: {
-        type: Sequelize.ENUM('available', 'pending', 'limited'),
-        defaultValue: 'pending',
-        allowNull: false
-    },
     quentity: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            min: 1
-        }
-    },
-    startingPoint: {
-        type: Sequelize.DATE,
-        defaultValue: Date.now(),
-        allowNull: false
-    },
-    isRandom: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
-        allowNull: false
-    },
-    range: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
         validate: {
-            notEmpty: true,
             min: 0
         }
     },
-    location: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    }
+    activateDate: {
+        type: Sequelize.DATE,
+        defaultValue: Date.now(),
+        allowNull: false
+    } //rename to active date and time
 })
 
 module.exports = Capsule

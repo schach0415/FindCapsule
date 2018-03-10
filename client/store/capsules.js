@@ -1,14 +1,15 @@
 'use strict'
 
-import axios from 'axios';
+import axios from 'axios'
+import history from '../history'
 
 /**
  * ACTION TYPES
  */
-const GET_CAPSULES = 'GET_CAPSULES';
-const CREATE_CAPSULE = 'CREATE_CAPSULE';
-const UPDATE_CAPSULE = 'UPDATE_CAPSULE';
-const DELETE_CAPSULE = 'DELETE_CAPSULE';
+const GET_CAPSULES = 'GET_CAPSULES'
+const CREATE_CAPSULE = 'CREATE_CAPSULE'
+const UPDATE_CAPSULE = 'UPDATE_CAPSULE'
+const DELETE_CAPSULE = 'DELETE_CAPSULE'
 
 /**
  * ACTION CREATORS
@@ -30,7 +31,10 @@ export const fetchCapsules = () => dispatch =>
 export const addCapsule = capsule => dispatch =>
     axios.post('/api/capsules', capsule)
         .then(res => res.data)
-        .then(newCapsule => dispatch(createCapsule(newCapsule)))
+        .then(newCapsule => {
+          dispatch(createCapsule(newCapsule))
+          history.push(`/capsules/${newCapsule.id}`)
+        })
         .catch(err => console.error(`Creating Capsule ${capsule} unsuccesful.`, err))
 
 export const editCapsule = (capsule, id) => dispatch =>
