@@ -8,17 +8,12 @@ import {fetchEvents} from '../store'
  * COMPONENT
  */
 export class UserHome extends React.Component {
-  constructor(props){
-    super(props)
-  }
-  
   componentDidMount(){
     this.props.fetchEvents()
   }
 
   render(){
     const {email, events} = this.props
-    console.log(events)
     return (
       <div>
         <h3>Welcome, {email}</h3>

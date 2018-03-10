@@ -27,8 +27,14 @@ router.get('/:eventId', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     Event.create(req.body)
+        .then(event => {
+            return Event.findById(event.id, {
+                include: [{
+                    model: Capsule
+                }]
+            })
+        })
         .then(event =>
-
             res.status(201).json(event)
         )
         .catch(next)

@@ -69,7 +69,7 @@ class EventList extends React.Component {
  * CONTAINER
  */
 const mapState = ({ user }) => {
-    const userId = !user.id ? null : user.id
+    const userId = user.id
     return { userId }
 }
 

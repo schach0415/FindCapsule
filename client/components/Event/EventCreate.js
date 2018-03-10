@@ -17,7 +17,7 @@ class EventCreate extends React.Component {
             purpose: 'play',
             startDate: '',
             endDate: '',
-            userId: props.userId,
+            userId: this.props.userId,
             imageUrl: 'http://secretgardenplaycafe.co.uk/wp-content/uploads/2015/12/messyhands.jpg'
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -112,7 +112,7 @@ class EventCreate extends React.Component {
  * CONTAINER
  */
 const mapState = ({ user }) => {
-    const userId = user.userId
+    const userId = user.id
     return { userId }
 }
 
