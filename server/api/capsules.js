@@ -1,7 +1,7 @@
 'use strict ';
 
 const router = require('express').Router()
-const { Capsule } = require('../db/models')
+const { Capsule, Content, Spot } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
@@ -12,16 +12,27 @@ router.get('/', (req, res, next) => {
 
 router.get('/:capsuleId', (req, res, next) => {
     const id = req.params.capsuleId
-    Capsule.findById(id)
+    Capsule.findById(id, {
+        include: [
+            { model: Content },
+            { model: Spot }
+        ]
+    })
         .then(capsule => res.json(capsule))
         .catch(next)
 })
 
 router.post('/', (req, res, next) => {
     Capsule.create(req.body)
-        .then(capsule =>
-            res.status(201).json(capsule)
-        )
+        .then(capsule => {
+            return Capsule.findById(capsule.id, {
+                include: [
+                    { model: Content },
+                    { model: Spot }
+                ]
+            })
+        })
+        .then(capsule => res.status(201).json(capsule))
         .catch(next)
 })
 
@@ -31,9 +42,15 @@ router.put('/:capsuleId', (req, res, next) => {
         where: { id },
         returning: true,
     })
-        .then(([rowsUpdate, [capsule]]) =>
-            res.json(capsule)
-        )
+        .then(([rowsUpdate, [capsule]]) => {
+            return Capsule.findById(capsule.id, {
+                include: [
+                    { model: Content },
+                    { model: Spot }
+                ]
+            })
+        })
+        .then(capsule => res.json(capsule))
         .catch(next)
 })
 

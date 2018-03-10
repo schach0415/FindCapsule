@@ -17,7 +17,6 @@ class CapsuleList extends React.Component {
 
     render(){
         const capsules = this.props.capsules
-        console.log(capsules, !capsules)
         return (
             <div>
                 {

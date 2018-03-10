@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchCapsule } from '../../store'
-// import { ContentList } from '../'
+import { ContentList } from '../'
 
 /**
  * COMPONENT
@@ -35,8 +35,12 @@ class CapsuleDetail extends React.Component {
                             <Link to={`/capsules/${capsule.id}/content-create`}>
                                 <button>Put Content</button>
                             </Link>
-                            <img src={capsule.imageUrl}/>
-                            {/* <ContentList /> */}
+                            <div>
+                                <img src={capsule.imageUrl}/>
+                            </div>
+                            <div>
+                                <ContentList contents={capsule.contents} />
+                            </div>
                         </div>
                         <div>
                             <div>
