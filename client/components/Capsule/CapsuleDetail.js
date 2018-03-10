@@ -43,7 +43,10 @@ class CapsuleDetail extends React.Component {
                                 <h3>Location</h3>
                                 <button>Clear All</button>
                             </div>
-                            <span>Map has to be here</span>
+                            <span>
+                                Map has to be here
+                                <img src="http://1.bp.blogspot.com/_44RI0nPmmYg/S1Kj1WdvXiI/AAAAAAAAAWY/xf8JlG1lWQg/s320/wallstreet+map.png" />
+                            </span>
                             <div>
                                 <form onSubmit={this.onSubmit} >
                                     <button>Ramdom</button>
@@ -52,8 +55,8 @@ class CapsuleDetail extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <p>Activate Date : {capsule.activateDate}</p>
-                    <h4>{capsule.description}</h4>
+                    <h3>Activate Date : {capsule.activateDate}</h3>
+                    <h4>Description : {capsule.description}</h4>
                 </div>
             </div>
         )
@@ -75,7 +78,7 @@ const mapState = ({ capsule }) => {
 }
 
 const mapDispatch = (dispatch, ownProps) => {
-    const paramId = ownProps.match.params.CapsuleId
+    const paramId = ownProps.match.params.capsuleId
     return {
         fetchCapsule: () => dispatch(fetchCapsule(paramId))
     }
