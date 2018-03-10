@@ -20,7 +20,9 @@ router.get('/', (req, res, next) => {
 
 router.get('/:eventId', (req, res, next) => {
     const id = req.params.eventId
-    Event.findById(id)
+    Event.findById(id, {
+        include: [{ model: Capsule }]
+    })
         .then(event => res.json(event))
         .catch(next)
 })

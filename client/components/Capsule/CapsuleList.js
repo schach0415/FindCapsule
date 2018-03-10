@@ -19,7 +19,7 @@ class CapsuleList extends React.Component {
             <div>
                 {
                     !capsules ?
-                    this.renderWithoutCapsule() : this.renderWithoutCapsule()
+                    this.renderWithoutCapsule() : this.renderWithCapsule()
                 }
             </div>
         )
@@ -38,6 +38,7 @@ class CapsuleList extends React.Component {
     }
 
     renderWithCapsule(){
+        const capsules = this.props.capsules
         return (
             <div>
                 <div>
@@ -49,10 +50,6 @@ class CapsuleList extends React.Component {
                 <div>
                     {
                         capsules
-                            // .reduce((accu, curr) =>
-                            //     accu.slice(-1)[0].name !== curr.name,
-                            //     []
-                            // )
                             .map(capsule => (
                                 <CapsuleItem
                                     key={capsule.id}
