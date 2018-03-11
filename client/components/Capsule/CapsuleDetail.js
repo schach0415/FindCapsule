@@ -29,6 +29,9 @@ class CapsuleDetail extends React.Component {
                         <Link to={`/capsules/${capsule.id}/capsule-edit`}>
                             <button>Edit</button>
                         </Link>
+                        <Link to={`/events/${capsule.eventId}`}>
+                            <button>Back to Event</button>
+                        </Link>
                     </div>
                     <div>
                         <div>

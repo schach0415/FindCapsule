@@ -1,6 +1,7 @@
 'use strict'
 
 import axios from 'axios';
+import history from '../history'
 
 /**
  * ACTION TYPES
@@ -30,7 +31,10 @@ export const fetchContents = () => dispatch =>
 export const addContent = content => dispatch =>
     axios.post('/api/contents', content)
         .then(res => res.data)
-        .then(newContent => dispatch(createContent(newContent)))
+        .then(newContent => {
+          dispatch(createContent(newContent))
+          history.push(`/contents/${newContent.id}`)
+        })
         .catch(err => console.error(`Creating Content ${content} unsuccesful.`, err))
 
 export const editContent = (content, id) => dispatch =>
