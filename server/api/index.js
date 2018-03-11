@@ -6,6 +6,7 @@ router.use('/events', require('./events'))
 router.use('/capsules', require('./capsules'))
 router.use('/radars', require('./radars'))
 router.use('/contents', require('./contents'))
+router.use('/participants', require('./participants'))
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')

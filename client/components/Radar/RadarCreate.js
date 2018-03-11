@@ -47,6 +47,7 @@ class RadarCreate extends React.Component {
                                 )
                             }
                         </select>
+                        <button>Choose Radar</button>
                     </h3>
                     <h3>
                         <img src={this.state.imageUrl} />
@@ -60,7 +61,6 @@ class RadarCreate extends React.Component {
                     <h3>
                         Radar description : {this.state.description}
                     </h3>
-                    <button>Create Radar</button>
                 </form>
             </div>
         )

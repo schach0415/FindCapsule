@@ -46,13 +46,13 @@ class ParticipantList extends React.Component {
             <div>
                 <div>
                     <h2>Participants</h2>
-                    <Link to={`/events/${eventId}/Participant-create`}>
+                    <Link to={`/events/${eventId}/participant-create`}>
                         <button>Request To Join</button>
                     </Link>
                 </div>
                 <div>
                     {
-                        Participants
+                        participants
                             .map(participant => (
                                 <div>
                                     <span>{participant.email}</span>

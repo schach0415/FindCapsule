@@ -21,7 +21,7 @@ class EventItem extends React.Component {
                 <Link to={`/events/${event.id}`}>
                 <img src={event.imageUrl} />
                     <h3>{event.name}</h3>
-                    <p>{event.capsules.length}</p>
+                    <p>{event.capsules.length} capsule</p>
                 </Link>
                 <button onClick={this.removeEventCallback} >Delete</button>
             </div>

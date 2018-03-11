@@ -10,8 +10,9 @@ import capsules from './capsules'
 import event from './event'
 import events from './events'
 import radars from './radars'
+import participant from './participant'
 
-const reducer = combineReducers({user, content, contents, capsule, capsules, event, events, radars})
+const reducer = combineReducers({user, content, contents, capsule, capsules, event, events, radars, participant})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -27,3 +28,4 @@ export * from './capsules'
 export * from './event'
 export * from './events'
 export * from './radars'
+export * from './participant'

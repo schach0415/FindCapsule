@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { RadarItem } from '../'
 
 /**
  * COMPONENT
@@ -25,6 +26,7 @@ class RadarList extends React.Component {
     }
 
     renderWithRadar(){
+        const radars = this.props.radars
         return (
             <div>
                 <div>
@@ -32,15 +34,14 @@ class RadarList extends React.Component {
                 </div>
                 <div>
                     {
-                        Radars
+                        radars
                             .map(radar => (
-                                <div key={radar.id}>
-                                    <div>
-                                        <img src={radar.imageUrl}/>
-                                        <h4>{radar.name}</h4>
-                                    </div>
-                                </div>
-                            ))
+                                <RadarItem
+                                    key={radar.id}
+                                    radar={radar}
+                                />
+                            )
+                        )
                     }
                 </div>
             </div>

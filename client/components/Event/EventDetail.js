@@ -20,6 +20,7 @@ class EventDetail extends React.Component {
 
     render(){
         const event = this.props && this.props.event
+        const radars = this.props && this.props.radars
         return (
             <div>
                 <div>
@@ -40,8 +41,8 @@ class EventDetail extends React.Component {
                     capsules={event.capsules}
                     eventId={event.id}
                 />
-                <RadarList radars={event.radars} />
-                <ParticipantList participants={event.participant} />
+                <RadarList radars={radars} />
+                <ParticipantList participants={event.participant} eventId={event.id} />
             </div>
         )
     }
@@ -50,11 +51,7 @@ class EventDetail extends React.Component {
 /**
  * CONTAINER
  */
-const mapState = ({ event }) => {
-    return {
-        event
-    }
-}
+const mapState = ({ event, radars }) => ({ event, radars })
 
 const mapDispatch = (dispatch, ownProps) => {
     const paramId = ownProps.match.params.eventId

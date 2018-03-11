@@ -11,6 +11,7 @@ const Radar = db.define('radar', {
     },
     description: {
         type: Sequelize.TEXT,
+        defaultValue: 'Radar is an object-detection system that uses radio waves to determine the range, angle, or velocity of objects. It can be used to detect aircraft, ships, spacecraft, guided missiles, motor vehicles, weather formations, and terrain. However, this radar is only design for detecting CAPSULES',
         allowNull: false,
         validate: {
             notEmpty: true
