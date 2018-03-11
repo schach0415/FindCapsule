@@ -24,4 +24,6 @@ export {default as ContentItem} from './Content/ContentItem'
 export {default as ContentCreate} from './Content/ContentCreate'
 
 export {default as RadarList} from './Radar/RadarList'
+export {default as RadarCreate} from './Radar/RadarCreate'
+
 export {default as ParticipantList} from './Participant/ParticipantList'

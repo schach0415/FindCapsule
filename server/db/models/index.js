@@ -18,8 +18,8 @@ Event.hasMany(Participant)
 Capsule.hasMany(Content)
 Capsule.hasMany(Spot)
 Radar.hasMany(Spot)
+Radar.hasMany(Participant)
 Participant.hasMany(Spot)
-Participant.hasOne(Radar)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
