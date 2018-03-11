@@ -28,8 +28,8 @@ class CapsuleCreate extends React.Component {
                     <h3>
                         Capsule Name : 
                         <input
-                            onChange={capsule =>
-                                this.setState({ name: capsule.target.value })
+                            onChange={evt =>
+                                this.setState({ name: evt.target.value })
                             }
                             name="name"
                             required
@@ -42,8 +42,8 @@ class CapsuleCreate extends React.Component {
                     <h3>
                         Capsule Activate Date : 
                         <input
-                            onChange={capsule =>
-                                this.setState({ activateDate: capsule.target.value })
+                            onChange={evt =>
+                                this.setState({ activateDate: evt.target.value })
                             }
                             name="activateDate"
                             required
@@ -53,8 +53,8 @@ class CapsuleCreate extends React.Component {
                     <h3>
                         Capsule description : 
                         <textarea
-                            onChange={capsule =>
-                                this.setState({ description: capsule.target.value })
+                            onChange={evt =>
+                                this.setState({ description: evt.target.value })
                             }
                             name="description"
                             required

@@ -20,12 +20,22 @@ const Content = db.define('content', {
             'sound',
             'video',
             'image',
-            'text',
+            'letter',
             'coupon',
             'bitcoin',
-            'website'
+            'website',
+            'ticket',
+            'findCapsule'
         ),
         defaultValue: 'image',
     },
+    item: {
+        type: Sequelize.STRING,
+    },
+    imageUrl: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    }
 })
+
 module.exports = Content

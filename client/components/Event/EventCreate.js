@@ -36,8 +36,8 @@ class EventCreate extends React.Component {
                     <h3>
                         Event title : 
                         <input
-                            onChange={event =>
-                                this.setState({ title: event.target.value })
+                            onChange={evt =>
+                                this.setState({ title: evt.target.value })
                             }
                             name="title"
                             required
@@ -50,8 +50,8 @@ class EventCreate extends React.Component {
                     <h3>
                         Event Start Date : 
                         <input
-                            onChange={event =>
-                                this.setState({ startDate: event.target.value })
+                            onChange={evt =>
+                                this.setState({ startDate: evt.target.value })
                             }
                             name="startDate"
                             required
@@ -61,8 +61,8 @@ class EventCreate extends React.Component {
                     <h3>
                         Event End Date : 
                         <input
-                            onChange={event =>
-                                this.setState({ endDate: event.target.value })
+                            onChange={evt =>
+                                this.setState({ endDate: evt.target.value })
                             }
                             name="endDate"
                             required
@@ -72,8 +72,8 @@ class EventCreate extends React.Component {
                     <h3>
                         Event purpose : 
                         <select
-                            onChange={event =>
-                                this.setState({ purpose: event.target.value })
+                            onChange={evt =>
+                                this.setState({ purpose: evt.target.value })
                             }>
                             {
                                 purpose
@@ -87,8 +87,8 @@ class EventCreate extends React.Component {
                     <h3>
                         Event note : 
                         <textarea
-                            onChange={event =>
-                                this.setState({ note: event.target.value })
+                            onChange={evt =>
+                                this.setState({ note: evt.target.value })
                             }
                             name="note"
                             required

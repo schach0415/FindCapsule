@@ -17,10 +17,11 @@ class CapsuleList extends React.Component {
 
     render(){
         const capsules = this.props.capsules
+        if(!capsules) return null
         return (
             <div>
                 {
-                    !capsules ?
+                    !capsules[0] ?
                     this.renderWithoutCapsule() : this.renderWithCapsule()
                 }
             </div>
@@ -51,15 +52,21 @@ class CapsuleList extends React.Component {
                     </Link>
                 </div>
                 <div>
-                    {
-                        capsules
-                            .map(capsule => (
-                                <CapsuleItem
-                                    key={capsule.id}
-                                    capsule={capsule}
-                                />
-                        ))
-                    }
+                    <div>
+                        {
+                            capsules
+                                .map(capsule => (
+                                    <CapsuleItem
+                                        key={capsule.id}
+                                        capsule={capsule}
+                                    />
+                            ))
+                        }
+                    </div>
+                    <div>
+                        <span>Map needs to be here</span>
+                        <img src='http://nyc-defenselawyers.com/images/map.jpg' />
+                    </div>
                 </div>
             </div>
         )

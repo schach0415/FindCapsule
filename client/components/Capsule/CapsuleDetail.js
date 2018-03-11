@@ -39,7 +39,10 @@ class CapsuleDetail extends React.Component {
                                 <img src={capsule.imageUrl}/>
                             </div>
                             <div>
-                                <ContentList contents={capsule.contents} />
+                                <ContentList
+                                    contents={capsule.contents}
+                                    capsuleId={capsule.id}
+                                />
                             </div>
                         </div>
                         <div>
