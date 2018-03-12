@@ -16,11 +16,13 @@ export class UserHome extends React.Component {
   render(){
     const {email, events} = this.props
     return (
-      <div>
-        <h3>Welcome, {email}</h3>
-        <EventList events={events} />
-        <img id="homepage" src="/findCapsule.jpg" />
-      </div>
+      <section id="homepage" >
+        <div id="homepage-text" >
+          <h3>Welcome, {email}</h3>
+          <EventList events={events} />
+        </div>
+        <img className="homepage-img" src="/findCapsule.jpg" />
+      </section>
     )
   }
 }

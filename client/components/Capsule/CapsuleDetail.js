@@ -34,19 +34,19 @@ class CapsuleDetail extends React.Component {
                         </Link>
                     </div>
                     <div className="line-up" >
-                        <div className="for-one" >
-                            <div>
+                        <section className="for-one" >
+                            <div className="capsule-img-main" >
                                 <Link to={`/capsules/${capsule.id}/content-create`}>
                                     <img className="single-img" src={capsule.imageUrl}/>
                                 </Link>
                             </div>
-                            <div>
+                            <div className="content-imgs" >
                                 <ContentList
                                     contents={capsule.contents}
                                     capsuleId={capsule.id}
                                 />
                             </div>
-                        </div>
+                        </section>
                         <div className="for-one" >
                             <div className="center">
                                 <h3>Location</h3>

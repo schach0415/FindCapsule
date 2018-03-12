@@ -19,7 +19,7 @@ class EventList extends React.Component {
         return (
             <div>
                 <div className="center" >
-                    <h2>Events</h2>
+                    <h1>Events</h1>
                     <Link to="/event-create">
                         <button>Create Event</button>
                     </Link>
