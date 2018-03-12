@@ -14,7 +14,7 @@ class ParticipantCreate extends React.Component {
         super(props)
         this.state = {
             email: [],
-            eventId: +this.props.eventId,
+            eventId: this.props.eventId,
             radarId: 1,
             Invitation: ''
         }
@@ -86,7 +86,7 @@ class ParticipantCreate extends React.Component {
         email.forEach(messEmail => {
             const email = messEmail.trim()
             const invitee = { email, eventId, radarId }
-            addParticipant(invitee)
+            return addParticipant(invitee)
         })
         history.push(`/events/${eventId}`)
     }
@@ -96,7 +96,7 @@ class ParticipantCreate extends React.Component {
  * CONTAINER
  */
 const mapState = ({ radars }, ownProps) => {
-    const eventId = ownProps.match.params.eventId
+    const eventId = Number(ownProps.match.params.eventId)
     return { radars, eventId }
 }
 

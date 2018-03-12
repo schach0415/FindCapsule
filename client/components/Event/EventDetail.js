@@ -12,15 +12,32 @@ import { CapsuleList, RadarList, ParticipantList } from '../'
 class EventDetail extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            event: this.props.event,
+            radars: this.props.radars,
+        }
     }
 
     componentDidMount(){
         this.props.fetchEvent()
     }
 
+    componentWillReceiveProps(newProps, oldProps){
+        if (newProps.event !== oldProps){
+            this.setState({
+                event: newProps.event
+            })
+        }
+        if (newProps.radars !== oldProps){
+            this.setState({
+                radars: newProps.radars
+            })
+        }
+    }
+
     render(){
-        const event = this.props && this.props.event
-        const radars = this.props && this.props.radars
+        const event = this.state.event
+        const radars = this.state.radars
         return (
             <div>
                 <div>
@@ -62,7 +79,7 @@ class EventDetail extends React.Component {
 const mapState = ({ event, radars }) => ({ event, radars })
 
 const mapDispatch = (dispatch, ownProps) => {
-    const paramId = ownProps.match.params.eventId
+    const paramId = Number(ownProps.match.params.eventId)
     return {
         fetchEvent: () => dispatch(fetchEvent(paramId))
     }
