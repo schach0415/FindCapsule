@@ -23,7 +23,10 @@ class EventItem extends React.Component {
                     <h3>{event.name}</h3>
                     <p>{event.capsules.length} capsule</p>
                 </Link>
-                <button onClick={this.removeEventCallback} >Delete</button>
+                {
+                    event.capsules.length !== 0 ? null :
+                    <button onClick={this.removeEventCallback}>Delete</button>
+                }
             </div>
         )
     }

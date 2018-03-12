@@ -1,7 +1,7 @@
 'use strict ';
 
 const router = require('express').Router()
-const { Event, Capsule, Participant } = require('../db/models')
+const { Event, Capsule, Participant, Spot } = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
@@ -17,7 +17,10 @@ router.get('/:eventId', (req, res, next) => {
     Event.findById(id, {
         include: [
             { model: Capsule },
-            { model: Participant }
+            {
+                model: Participant,
+                include: [{model: Spot}]
+            }
         ]
     })
         .then(event => res.json(event))

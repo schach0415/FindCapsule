@@ -19,3 +19,9 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+#homepage {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}

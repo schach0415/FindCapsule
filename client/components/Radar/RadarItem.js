@@ -9,13 +9,27 @@ import { Link } from 'react-router-dom';
  */
 class RadarItem extends React.Component {
     render(){
-        const radar = this.props.radar
+        const { radar, participants } = this.props
         return (
             <div>
                 <Link to={`/radars/${radar.id}`}>
                     <img src={radar.imageUrl} />
                     <h4>{radar.name}</h4>
+                    <p>{participants.length} hunters</p>
                 </Link>
+                    {
+                        !participants[0] ? null :
+                        <select>
+                            {
+                                participants
+                                    .map(participant => (
+                                        <option key={participant.id} >
+                                            {participant.email}
+                                        </option>     
+                                ))
+                            }
+                        </select>
+                    }
             </div>
         )
     }

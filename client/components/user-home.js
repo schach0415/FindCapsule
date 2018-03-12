@@ -19,6 +19,7 @@ export class UserHome extends React.Component {
       <div>
         <h3>Welcome, {email}</h3>
         <EventList events={events} />
+        <img id="homepage" src="/findCapsule.jpg" />
       </div>
     )
   }

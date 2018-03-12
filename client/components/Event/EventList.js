@@ -31,7 +31,7 @@ class EventList extends React.Component {
             <div>
                 <h2>Events</h2>
                 <Link to="/event-create">
-                    <button>Add Event</button>
+                    <button>Create Event</button>
                 </Link>
                 <p>There is no Event.</p>
             </div>
@@ -45,7 +45,7 @@ class EventList extends React.Component {
                 <div>
                     <h2>Events</h2>
                     <Link to="/event-create">
-                        <button>Add Event</button>
+                        <button>Create Event</button>
                     </Link>
                 </div>
                 <div>

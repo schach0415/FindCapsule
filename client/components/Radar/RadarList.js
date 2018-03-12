@@ -11,6 +11,7 @@ import { RadarItem } from '../'
 class RadarList extends React.Component {
     constructor(props){
         super(props)
+        this.renderWithRadar = this.renderWithRadar.bind(this)
     }
 
     render(){
@@ -26,7 +27,8 @@ class RadarList extends React.Component {
     }
 
     renderWithRadar(){
-        const radars = this.props.radars
+        const { radars, participants } = this.props
+        if(!participants) return null
         return (
             <div>
                 <div>
@@ -39,6 +41,10 @@ class RadarList extends React.Component {
                                 <RadarItem
                                     key={radar.id}
                                     radar={radar}
+                                    participants={
+                                        participants
+                                            .filter(player => player.radarId === radar.id)
+                                    }
                                 />
                             )
                         )

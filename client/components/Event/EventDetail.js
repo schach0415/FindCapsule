@@ -41,8 +41,8 @@ class EventDetail extends React.Component {
                     capsules={event.capsules}
                     eventId={event.id}
                 />
-                <RadarList radars={radars} />
-                <ParticipantList participants={event.participant} eventId={event.id} />
+                <RadarList radars={radars} participants={event.participants} />
+                <ParticipantList participants={event.participants} eventId={event.id} />
             </div>
         )
     }

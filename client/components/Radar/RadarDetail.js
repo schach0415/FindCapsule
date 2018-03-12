@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 class RadarDetail extends React.Component {
     render(){
         const radar = this.props && this.props.radar
+        if(!radar) return null
         return (
             <div>
                 <h3>
@@ -35,6 +36,10 @@ class RadarDetail extends React.Component {
 /**
  * CONTAINER
  */
-const mapState = null
+const mapState = ({ radars }, ownProps) => {
+    const paramId = Number(ownProps.match.params.radarId)
+    const radar = !radars ? null : radars.find(radar => radar.id === paramId)
+    return { radar }
+}
 
 export default connect(mapState)(RadarDetail)
