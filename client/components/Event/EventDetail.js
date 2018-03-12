@@ -24,24 +24,32 @@ class EventDetail extends React.Component {
         return (
             <div>
                 <div>
-                    <div>
+                    <div className="line-up center" >
                         <h1>{event.title}</h1>
                         <Link to={`/events/${event.id}/edit`}>
                             <button>Edit</button>
                         </Link>
                     </div>
-                    <img src={event.imageUrl}/>
-                    <p>
-                        Start : {event.startDate} ~ End : {event.endDate}
-                    </p>
-                    <h4>{event.purpose}</h4>
-                    <p>{event.note}</p>
+                    <div className="center" >
+                        <img className="single-img" src={event.imageUrl}/>
+                    </div>
+                    <div className="center" >
+                        <p>
+                            Start : {event.startDate} ~ End : {event.endDate}
+                        </p>
+                    </div>
+                    <div className="center" >
+                        <h3>{event.purpose}</h3>
+                    </div>
+                    <div className="center" >
+                        <p>{event.note}</p>
+                    </div>
                 </div>
                 <CapsuleList
                     capsules={event.capsules}
                     eventId={event.id}
                 />
-                <RadarList radars={radars} participants={event.participants} />
+                <RadarList radars={radars} participants={event.participants} eventId={event.id}/>
                 <ParticipantList participants={event.participants} eventId={event.id} />
             </div>
         )

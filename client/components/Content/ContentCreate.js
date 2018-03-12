@@ -54,57 +54,67 @@ class ContentCreate extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
-                    <h3>
-                        Content Title : 
-                        <input
-                            onChange={evt =>
-                                this.setState({ title: evt.target.value })
-                            }
-                            name="title"
-                            required
-                            placeholder="Content Title"
-                        />
-                    </h3>
-                    <h3>
-                        <img src={this.state.imageUrl} />
-                    </h3>
-                    <h3>
-                        Content Type : 
-                        <select onChange={evt => {
-                                this.setState({ contentType: evt.target.value })
-                                this.imgUrlSetup(evt.target.value)
-                            }}
-                        >
-                            {
-                                contentType.map(type => (
-                                    <option key={type}>{type}</option>
-                                ))
-                            }
-                        </select>
-                    </h3>
-                    <h3>
-                        Content Item : 
-                        <input
-                            onChange={evt =>
-                                this.setState({ item: evt.target.value })
-                            }
-                            name="item"
-                            required
-                            placeholder="URL address for now"
-                        />
-                    </h3>
-                    <h3>
-                        Content Note : 
-                        <textarea
-                            onChange={evt =>
-                                this.setState({ note: evt.target.value })
-                            }
-                            name="note"
-                            required
-                            placeholder="Give detail about this Content"
-                        />
-                    </h3>
-                    <button>Add Content</button>
+                    <div className="center" >
+                        <h3>
+                            Content Title : 
+                            <input
+                                onChange={evt =>
+                                    this.setState({ title: evt.target.value })
+                                }
+                                name="title"
+                                required
+                                placeholder="Content Title"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <img className="single-img" src={this.state.imageUrl} />
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Content Type : 
+                            <select onChange={evt => {
+                                    this.setState({ contentType: evt.target.value })
+                                    this.imgUrlSetup(evt.target.value)
+                                }}
+                            >
+                                {
+                                    contentType.map(type => (
+                                        <option key={type}>{type}</option>
+                                    ))
+                                }
+                            </select>
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Content Item : 
+                            <input
+                                onChange={evt =>
+                                    this.setState({ item: evt.target.value })
+                                }
+                                name="item"
+                                required
+                                placeholder="URL address for now"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Content Note : 
+                            <textarea
+                                onChange={evt =>
+                                    this.setState({ note: evt.target.value })
+                                }
+                                name="note"
+                                required
+                                placeholder="Give detail about this Content"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <button>Add Content</button>
+                    </div>
                 </form>
             </div>
         )

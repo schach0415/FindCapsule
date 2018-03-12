@@ -22,7 +22,7 @@ class ContentDetail extends React.Component {
         return (
             <div>
                 <div>
-                    <div>
+                    <div className="center" >
                         <h1>{content.title}</h1>
                         <Link to={`/contents/${content.id}/content-edit`}>
                             <button>Edit</button>
@@ -31,10 +31,18 @@ class ContentDetail extends React.Component {
                             <button>Back to Capsule</button>
                         </Link>
                     </div>
-                    <img src={content.imageUrl}/>
-                    <img src={content.item} />
-                    <h3>Type : {content.contentType}</h3>
-                    <h4>Note : {content.note}</h4>
+                    <div className="center" >
+                        <img className="single-img" src={content.imageUrl}/>
+                    </div>
+                    <div className="center" >
+                        <a href={content.item} />
+                    </div>
+                    <div className="center" >
+                        <h3>Type : {content.contentType}</h3>
+                    </div>
+                    <div className="center" >
+                        <h4>Note : {content.note}</h4>
+                    </div>
                 </div>
             </div>
         )

@@ -13,7 +13,10 @@ class ContentItem extends React.Component {
         return (
             <div>
                 <Link to={`/contents/${content.id}`}>
-                    <img src={content.imageUrl} />
+                    <img
+                        className="contentItem-img"
+                        src={content.imageUrl}
+                    />
                 </Link>
             </div>
         )

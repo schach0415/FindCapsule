@@ -25,6 +25,7 @@ class ParticipantCreate extends React.Component {
         const radars = this.props.radars
         return (
             <div>
+                <div className="center" >
                 <select onChange={evt => {
                     const radar = radars.find(radar => radar.name === evt.target.value)
                     this.setState({ radarId: radar.id})
@@ -38,32 +39,41 @@ class ParticipantCreate extends React.Component {
                         )
                     }
                 </select>
-                <RadarDetail radar={radars.find(radar => radar.id === this.state.radarId)}/>
+                </div>
+                <RadarDetail
+                    radar={radars.find(radar => radar.id === this.state.radarId)}
+                />
                 <form onSubmit={this.handleSubmit} >
-                    <h3>
-                        Participant Email Addresses : 
-                        <input
-                            onChange={evt => {
-                                this.setState({ email: evt.target.value.split(',') })
+                    <div className="center" >
+                        <h3>
+                            Participant Email Addresses : 
+                            <input
+                                onChange={evt => {
+                                    this.setState({ email: evt.target.value.split(',') })
+                                    }
                                 }
-                            }
-                            name="email"
-                            required
-                            placeholder="Email Addresses seperate by ','."
-                        />
-                    </h3>
-                    <h3>
-                        Invitation : 
-                        <textarea
-                            onChange={evt =>
-                                this.setState({ Invitation: evt.target.value })
-                            }
-                            name="invitation"
-                            required
-                            placeholder="Give detail about this invitation to Participant"
-                        />
-                    </h3>
-                    <button>Send Invitation</button>
+                                name="email"
+                                required
+                                placeholder="Email Addresses seperate by ','."
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Invitation : 
+                            <textarea
+                                onChange={evt =>
+                                    this.setState({ Invitation: evt.target.value })
+                                }
+                                name="invitation"
+                                required
+                                placeholder="Give detail about this invitation to Participant"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <button>Send Invitation</button>
+                    </div>
                 </form>
             </div>
         )

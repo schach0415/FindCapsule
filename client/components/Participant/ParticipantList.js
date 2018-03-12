@@ -3,7 +3,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import { ParticipantItem } from '../'
 
 /**
  * COMPONENT
@@ -18,15 +17,21 @@ class ParticipantList extends React.Component {
         const { participants, eventId } = this.props
         return (
             <div>
-                 <h2>Participants</h2>
+                <div className="center" >
+                    <h2>Participants</h2>
                     <Link to={`/events/${eventId}/participant-create`}>
                         <button>Request To Join</button>
                     </Link>
-                <p>There is {!participants ? null : participants.length} Participant.</p>
-                {
-                    !participants ?
-                    null : this.renderWithParticipant()
-                }
+                </div>
+                <div className="center" >
+                    <p>There is {!participants ? null : participants.length} Participant.</p>
+                </div>
+                <div className="center" >
+                    {
+                        !participants ?
+                        null : this.renderWithParticipant()
+                    }
+                </div>
             </div>
         )
     }

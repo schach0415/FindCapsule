@@ -19,7 +19,7 @@ class CapsuleItem extends React.Component {
         return (
             <div>
                 <Link to={`/capsules/${capsule.id}`}>
-                <img src={capsule.imageUrl} />
+                <img className="capsuleItem-img" src={capsule.imageUrl} />
                     <h3>{capsule.name}</h3>
                     <p>{capsule.quentity}</p>
                 </Link>

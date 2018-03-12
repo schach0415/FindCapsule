@@ -29,8 +29,8 @@ class ContentList extends React.Component {
     renderWithContent(){
         const contents = this.props.contents
         return (
-            <div>
-                <div>
+            <div className="center" >
+                <div className="list-view" >
                     {
                         contents
                             .map(content => (

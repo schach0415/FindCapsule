@@ -12,31 +12,24 @@ class CapsuleList extends React.Component {
     constructor(props){
         super(props)
         this.renderWithCapsule = this.renderWithCapsule.bind(this)
-        this.renderWithoutCapsule = this.renderWithoutCapsule.bind(this)
     }
 
     render(){
-        const capsules = this.props.capsules
+        const { capsules, eventId } = this.props
         if(!capsules) return null
         return (
             <div>
+                <div className="center" >
+                    <h2>Capsules</h2>
+                    <Link to={`/events/${eventId}/capsule-create`}>
+                        <button>Add Capsule</button>
+                    </Link>
+                </div>
                 {
                     !capsules[0] ?
-                    this.renderWithoutCapsule() : this.renderWithCapsule()
+                    (<div className="center" ><p>There is no Capsule.</p></div>) : 
+                    this.renderWithCapsule()
                 }
-            </div>
-        )
-    }
-
-    renderWithoutCapsule(){
-        const eventId = this.props.eventId
-        return (
-            <div>
-                <h2>Capsules</h2>
-                <Link to={`/events/${eventId}/capsule-create`}>
-                    <button>Add Capsule</button>
-                </Link>
-                <p>There is no Capsule.</p>
             </div>
         )
     }
@@ -45,27 +38,23 @@ class CapsuleList extends React.Component {
         const { capsules, eventId } = this.props
         return (
             <div>
-                <div>
-                    <h2>Capsules</h2>
-                    <Link to={`/events/${eventId}/capsule-create`}>
-                        <button>Add Capsule</button>
-                    </Link>
-                </div>
-                <div>
-                    <div>
-                        {
-                            capsules
-                                .map(capsule => (
-                                    <CapsuleItem
-                                        key={capsule.id}
-                                        capsule={capsule}
-                                    />
-                            ))
-                        }
+                <div className="line-up" >
+                    <div className="for-one" >
+                        <div className="list-view">
+                            {
+                                capsules
+                                    .map(capsule => (
+                                        <CapsuleItem
+                                            key={capsule.id}
+                                            capsule={capsule}
+                                        />
+                                ))
+                            }
+                        </div>
                     </div>
                     <div>
-                        <span>Map needs to be here</span>
-                        <img src='http://nyc-defenselawyers.com/images/map.jpg' />
+                        <span>Real Map needs to be here</span>
+                        <img className="fake-img toRight" src='http://nyc-defenselawyers.com/images/map.jpg' />
                     </div>
                 </div>
             </div>

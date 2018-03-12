@@ -18,22 +18,17 @@ class EventList extends React.Component {
         const events = this.props.events
         return (
             <div>
+                <div className="center" >
+                    <h2>Events</h2>
+                    <Link to="/event-create">
+                        <button>Create Event</button>
+                    </Link>
+                </div>
                 {
                     !events[0] ?
-                    this.renderWithoutEvent() : this.renderWithEvent()
+                    (<div className="center" ><p>There is no Event.</p></div>) :
+                    this.renderWithEvent()
                 }
-            </div>
-        )
-    }
-
-    renderWithoutEvent(){
-        return (
-            <div>
-                <h2>Events</h2>
-                <Link to="/event-create">
-                    <button>Create Event</button>
-                </Link>
-                <p>There is no Event.</p>
             </div>
         )
     }
@@ -42,13 +37,7 @@ class EventList extends React.Component {
         const { events, userId } = this.props
         return (
             <div>
-                <div>
-                    <h2>Events</h2>
-                    <Link to="/event-create">
-                        <button>Create Event</button>
-                    </Link>
-                </div>
-                <div>
+                <div className="event-list" >
                     {
                         events
                             .map(event => (

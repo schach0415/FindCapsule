@@ -27,20 +27,21 @@ class RadarList extends React.Component {
     }
 
     renderWithRadar(){
-        const { radars, participants } = this.props
+        const { radars, participants, eventId } = this.props
         if(!participants) return null
         return (
             <div>
-                <div>
+                <div className="center" >
                     <h2>Radars</h2>
                 </div>
-                <div>
+                <div className="list-view" >
                     {
                         radars
                             .map(radar => (
                                 <RadarItem
                                     key={radar.id}
                                     radar={radar}
+                                    eventId={eventId}
                                     participants={
                                         participants
                                             .filter(player => player.radarId === radar.id)

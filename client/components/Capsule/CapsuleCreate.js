@@ -25,63 +25,51 @@ class CapsuleCreate extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
-                    <h3>
-                        Capsule Name : 
-                        <input
-                            onChange={evt =>
-                                this.setState({ name: evt.target.value })
-                            }
-                            name="name"
-                            required
-                            placeholder="Capsule Name"
-                        />
-                    </h3>
-                    <h3>
-                        <img src={this.state.imageUrl} />
-                    </h3>
-                    <h3>
-                        Capsule Activate Date : 
-                        <input
-                            onChange={evt =>
-                                this.setState({ activateDate: evt.target.value })
-                            }
-                            name="activateDate"
-                            required
-                            placeholder="M-D-YYYY"
-                        />
-                    </h3>
-                    <h3>
-                        Capsule description : 
-                        <textarea
-                            onChange={evt =>
-                                this.setState({ description: evt.target.value })
-                            }
-                            name="description"
-                            required
-                            placeholder="Give detail about this Capsule"
-                        />
-                    </h3>
-                    {/* <div>
-                        <div>
-                            <h3>Location</h3>
-                            <button>Clear All Capsule</button>
-                        </div>
-                        <div>
-                            <div>Map</div>
-                            <div>
-                                <form>
-                                    <div>
-                                        <h4>Ramdom Locator</h4>
-                                        <input
-                                            placeholder="Ramdom Quentity"
-                                        />
-                                        <button>Locate Capsule</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div> */}
-                    <button>Make Capsule</button>
+                    <div className="center" >
+                        <h3>
+                            Capsule Name : 
+                            <input
+                                onChange={evt =>
+                                    this.setState({ name: evt.target.value })
+                                }
+                                name="name"
+                                required
+                                placeholder="Capsule Name"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <img className="single-img" src={this.state.imageUrl} />
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Capsule Activate Date : 
+                            <input
+                                onChange={evt =>
+                                    this.setState({ activateDate: evt.target.value })
+                                }
+                                name="activateDate"
+                                required
+                                placeholder="M-D-YYYY"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <h3>
+                            Capsule description : 
+                            <textarea
+                                onChange={evt =>
+                                    this.setState({ description: evt.target.value })
+                                }
+                                name="description"
+                                required
+                                placeholder="Give detail about this Capsule"
+                            />
+                        </h3>
+                    </div>
+                    <div className="center" >
+                        <button>Make Capsule</button>
+                    </div>
                 </form>
             </div>
         )

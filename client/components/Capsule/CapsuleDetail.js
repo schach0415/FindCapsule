@@ -24,7 +24,7 @@ class CapsuleDetail extends React.Component {
         return (
             <div>
                 <div>
-                    <div>
+                    <div className="center" >
                         <h1>{capsule.name}</h1>
                         <Link to={`/capsules/${capsule.id}/capsule-edit`}>
                             <button>Edit</button>
@@ -33,13 +33,12 @@ class CapsuleDetail extends React.Component {
                             <button>Back to Event</button>
                         </Link>
                     </div>
-                    <div>
-                        <div>
-                            <Link to={`/capsules/${capsule.id}/content-create`}>
-                                <button>Put Content</button>
-                            </Link>
+                    <div className="line-up" >
+                        <div className="for-one" >
                             <div>
-                                <img src={capsule.imageUrl}/>
+                                <Link to={`/capsules/${capsule.id}/content-create`}>
+                                    <img className="single-img" src={capsule.imageUrl}/>
+                                </Link>
                             </div>
                             <div>
                                 <ContentList
@@ -48,14 +47,14 @@ class CapsuleDetail extends React.Component {
                                 />
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div className="for-one" >
+                            <div className="center">
                                 <h3>Location</h3>
                                 <button>Clear All</button>
                             </div>
                             <span>
-                                Map has to be here
-                                <img src="http://1.bp.blogspot.com/_44RI0nPmmYg/S1Kj1WdvXiI/AAAAAAAAAWY/xf8JlG1lWQg/s320/wallstreet+map.png" />
+                                Real Map has to be here
+                                <img className="fake-img2 toRight" src="http://1.bp.blogspot.com/_44RI0nPmmYg/S1Kj1WdvXiI/AAAAAAAAAWY/xf8JlG1lWQg/s320/wallstreet+map.png" />
                             </span>
                             <div>
                                 <form onSubmit={this.onSubmit} >
@@ -65,8 +64,12 @@ class CapsuleDetail extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <h3>Activate Date : {capsule.activateDate}</h3>
-                    <h4>Description : {capsule.description}</h4>
+                    <div className="center" >
+                        <h3>Activate Date : {capsule.activateDate}</h3>
+                    </div>
+                    <div className="center" >
+                        <h4>Description : {capsule.description}</h4>
+                    </div>
                 </div>
             </div>
         )

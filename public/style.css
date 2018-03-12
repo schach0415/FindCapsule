@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: fantasy;
 }
 
 a {
@@ -24,4 +24,84 @@ form div {
   position: fixed;
   height: 100vh;
   width: 100vw;
+}
+
+.eventItem-group-view {
+  background-color: #e97c00;
+  max-width: 140px;
+  flex: 1;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 8px 15px;
+  white-space: nowrap;
+}
+
+.eventItem-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  background-color: lightgray
+}
+.capsuleItem-img {
+  width: 80px;
+  height: 128px;
+  border-radius: 4px;
+  background-color: lightgray
+}
+.radarItem-img {
+  width: 128px;
+  height: 110px;
+  border-radius: 100px;
+  background-color: lightgray
+}
+.fake-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  background-color: lightgray
+}
+.fake-img2 {
+  width: 40vw;
+  height: 30vw;
+  border-radius: 4px;
+  background-color: lightgray
+}
+.contentItem-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: lightgray
+}
+
+.list-view,
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single-img {
+  width: 50vw;
+  height: 40vw;
+  display: block;
+}
+
+.line-up {
+  display: flex;
+}
+
+.for-one {
+  flex: 1;
+}
+
+.center {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.toRight {
+  text-align: right;
 }

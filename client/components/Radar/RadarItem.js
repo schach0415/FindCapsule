@@ -9,11 +9,14 @@ import { Link } from 'react-router-dom';
  */
 class RadarItem extends React.Component {
     render(){
-        const { radar, participants } = this.props
+        const { radar, participants, eventId } = this.props
         return (
             <div>
-                <Link to={`/radars/${radar.id}`}>
-                    <img src={radar.imageUrl} />
+                <Link to={`/events/${eventId}/radars/${radar.id}`}>
+                    <img
+                        className="radarItem-img"
+                        src={radar.imageUrl}
+                    />
                     <h4>{radar.name}</h4>
                     <p>{participants.length} hunters</p>
                 </Link>

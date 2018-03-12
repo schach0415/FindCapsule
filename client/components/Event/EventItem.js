@@ -17,9 +17,12 @@ class EventItem extends React.Component {
     render(){
         const event = this.props.event
         return (
-            <div>
+            <div className="eventItem-group-view" >
                 <Link to={`/events/${event.id}`}>
-                <img src={event.imageUrl} />
+                    <img
+                        className="eventItem-img"
+                        src={event.imageUrl}
+                    />
                     <h3>{event.name}</h3>
                     <p>{event.capsules.length} capsule</p>
                 </Link>
